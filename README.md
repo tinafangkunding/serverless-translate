@@ -45,8 +45,8 @@ $ mkdir express-trans && cd express-trans
 通过如下命令和模板链接，快速创建一个 express 应用：
 
 ```
-$ serverless create --template-url https://github.com/serverless-components/tencent-express/tree/v2/example
-$ cd example
+$ serverless create --template-url https://github.com/tinafangkunding/serverless-translate
+$ cd serverless-translate
 ```
 
 执行如下命令，安装 express 应用的对应依赖
