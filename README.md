@@ -24,6 +24,7 @@
 
 - [**架构说明**](#架构说明)
 - [**账号配置**](#账号配置)
+- [**参考资料**](#参考资料)
 
 ### 1. 安装
 
@@ -104,6 +105,10 @@ $ touch .env # 腾讯云的配置信息
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
+## 参考资料
 
+1. [Serverless Express Component 全量配置](https://github.com/serverless-components/tencent-express/blob/v2/docs/configure.md)
 
+2. [机器翻译接口文档](https://cloud.tencent.com/document/api/551/15619)
 
+3. 本 demo 改自 [tencent-serverless-demo](https://github.com/yugasun/tencent-serverless-demo/tree/master/dict)，感谢原作者 yugasun
