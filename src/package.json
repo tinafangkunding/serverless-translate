@@ -1,0 +1,16 @@
+{
+  "name": "express-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sls.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tina",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "tslib": "^2.0.0",
+    "tss-capi": "^0.2.5"
+  }
+}
