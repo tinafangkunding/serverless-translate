@@ -60,7 +60,37 @@ $ cd src && npm install
 ### 3. 部署
 
 
-在 `serverless.yml` 文件下的目录中运行 `serverless deploy` 进行该项目的部署。部署完毕后，你可以在命令行的输出中查看到该应用的 URL 地址，点击地址即可访问。
+在 `serverless.yml` 文件下的目录中运行如下命令部署应用
+
+```
+$ serverless deploy
+
+Please scan QR code login from wechat. 
+Wait login...
+Login successful for TencentCloud. 
+
+serverless ⚡ framework
+Action: "deploy" - Stage: "dev" - App: "appDemo" - Instance: "TranslateDemo"
+
+region: ap-beijing
+apigw: 
+  serviceId:   service-xxxxx
+  subDomain:   service-xxxxx-1250000000.bj.apigw.tencentcs.com
+  environment: release
+  url:         https://service-xxxxx-1250000000.bj.apigw.tencentcs.com/release/
+scf: 
+  functionName: express_component_xxxx
+  runtime:      Nodejs10.15
+  namespace:    default
+
+10s › TranslateDemo › Success
+```
+
+部署完毕后，你可以在命令行的输出中查看到该应用的 URL 地址，在地址后缀增加希望查询的英文单词，访问地址即可查看翻译结果。
+
+例如： https://service-xxxxx-1250000000.bj.apigw.tencentcs.com/release/serverless
+
+翻译结果：无服务器
 
 **注意：**
 
