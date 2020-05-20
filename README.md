@@ -96,7 +96,11 @@ scf:
 
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
 
-### 4. 移除
+### 4. 查看监控
+
+在 [Serverless Dashboard](https://serverless.cloud.tencent.com/) 中查看应用级别的监控信息。包括函数触发次数、API 错误次数等指标。
+
+### 5. 移除
 
 在`serverless.yml`文件所在的目录下，通过以下命令移除部署的 Express 服务。移除后该组件会对应删除云上部署时所创建的所有相关资源。
 
