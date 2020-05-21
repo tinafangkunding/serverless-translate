@@ -56,7 +56,7 @@ $ cd serverless-translate
 $ cd src && npm install
 ```
 
-## 3. 配置
+### 3. 配置
 
 修改模板中的 `.env.example` 为 `.env`，并在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取并配置腾讯云的 `SecretId` 和`SecretKey`秘钥信息。
 
@@ -127,7 +127,7 @@ $ serverless remove
 
 > 注：`sls`是 `serverless` 命令的缩写。
 
-## 架构说明
+### 架构说明
 
 本示例将在腾讯云账户中使用到如下 Serverless 服务：
 
@@ -137,7 +137,7 @@ $ serverless remove
 - [x] **COS 对象存储** - 为确保上传速度和质量，云函数压缩并上传代码时，会默认将代码包存储在特定命名的 COS 桶中。
 - [x] **TMT 机器翻译** - 调用机器翻译的 SDK 实现翻译能力，提供免费额度。
 
-## 参考资料
+### 参考资料
 
 1. [Serverless Express Component 全量配置](https://github.com/serverless-components/tencent-express/blob/v2/docs/configure.md)
 
