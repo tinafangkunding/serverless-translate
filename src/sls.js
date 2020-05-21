@@ -1,5 +1,5 @@
 const express = require('express')
-const { Capi } = require('tss-capi')
+const { Capi } = require('@tencent-sdk/capi')
 const path = require('path')
 const app = express()
 

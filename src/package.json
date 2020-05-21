@@ -9,8 +9,8 @@
   "author": "tina",
   "license": "MIT",
   "dependencies": {
+    "@tencent-sdk/capi": "^0.2.15",
     "express": "^4.17.1",
-    "tslib": "^2.0.0",
-    "tss-capi": "^0.2.5"
+    "tslib": "^2.0.0"
   }
 }

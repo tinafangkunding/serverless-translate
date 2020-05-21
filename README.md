@@ -17,14 +17,14 @@
 
 1. [**安装**](#1-安装)
 2. [**创建**](#2-创建)
-3. [**部署**](#3-部署)
-4. [**监控**](#4-监控)
-5. [**移除**](#5-移除)
+3. [**配置**](#3-配置)
+4. [**部署**](#4-部署)
+5. [**监控**](#5-监控)
+6. [**移除**](#6-移除)
 
 更多资源：
 
 - [**架构说明**](#架构说明)
-- [**账号配置**](#账号配置)
 - [**参考资料**](#参考资料)
 
 ### 1. 安装
@@ -58,7 +58,20 @@ $ cd src && npm install
 
 安装完毕后，目录结构如下所示：
 
-### 3. 部署
+
+## 3. 配置
+
+修改模板中的 `.env.example` 为 `.env`，并在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取并配置腾讯云的 `SecretId` 和`SecretKey`秘钥信息。
+
+```
+# .env
+TENCENT_SECRET_ID=123
+TENCENT_SECRET_KEY=123
+```
+
+> 您可以 [登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云账号。
+
+### 4. 部署
 
 
 在 `serverless.yml` 文件下的目录中运行如下命令部署应用
@@ -89,19 +102,25 @@ scf:
 
 部署完毕后，你可以在命令行的输出中查看到该应用的 URL 地址，在地址后缀增加希望查询的英文单词，访问地址即可查看翻译结果。
 
-例如： https://service-xxxxx-1250000000.bj.apigw.tencentcs.com/release/serverless
+> 例如： https://service-xxxxx-1250000000.bj.apigw.tencentcs.com/release/serverless
+> 翻译结果：无服务器
 
-翻译结果：无服务器
+### 5. 监控
 
-**注意：**
+在 [Serverless Dashboard](https://serverless.cloud.tencent.com/) 中查看应用级别的监控信息。当前支持展示如下监控指标。
 
-如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
+```
+函数触发次数/错误次数：function invocations & errors
+函数延迟：function latency
+API 请求次数/错误次数：api requests & errors
+API 请求延迟：api latency
+API 5xx 错误次数：api 5xx errors
+API 4xx 错误次数：api 4xx errors
+API 错误次数统计：api errors
+不同路径下 API 的请求方法、请求次数和平均延迟统计：api path requests
+```
 
-### 4. 监控
-
-在 [Serverless Dashboard](https://serverless.cloud.tencent.com/) 中查看应用级别的监控信息。包括函数触发次数、API 错误次数等指标。
-
-### 5. 移除
+### 6. 移除
 
 在`serverless.yml`文件所在的目录下，通过以下命令移除部署的 Express 服务。移除后该组件会对应删除云上部署时所创建的所有相关资源。
 
@@ -121,25 +140,6 @@ $ serverless remove
 - [x] **COS 对象存储** - 为确保上传速度和质量，云函数压缩并上传代码时，会默认将代码包存储在特定命名的 COS 桶中。
 - [x] **TMT 机器翻译** - 调用机器翻译的 SDK 实现翻译能力。
 
-## 账号配置
-
-当前默认支持 CLI 扫描二维码登录，如您希望配置持久的环境变量/秘钥信息，也可以创建 `.env` 文件，或修改模板中的 `.env.example` 内容。
-
-```console
-$ touch .env # 腾讯云的配置信息
-```
-
-在 `.env` 文件中配置腾讯云的 SecretId 和 SecretKey 信息并保存
-
-如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
-
-如果已有腾讯云账号，可以在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取 `SecretId` 和`SecretKey`.
-
-```
-# .env
-TENCENT_SECRET_ID=123
-TENCENT_SECRET_KEY=123
-```
 ## 参考资料
 
 1. [Serverless Express Component 全量配置](https://github.com/serverless-components/tencent-express/blob/v2/docs/configure.md)
