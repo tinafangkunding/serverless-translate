@@ -7,10 +7,14 @@ const secretId = process.env.SID
 const secretKey = process.env.SKEY
 
   // Routes
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'))
+  })
 
-  app.get('/:sourceText', async (req, res) => {
+  app.get('/:target/:sourceText', async (req, res) => {
     
     const sourceText = req.params.sourceText
+    const target = req.params.target
 
     const client = new Capi({
       Region: 'ap-beijing',
@@ -19,14 +23,14 @@ const secretKey = process.env.SKEY
       ServiceType: 'tmt',
       host: 'tmt.tencentcloudapi.com',
     })
-    
+
     const resq = await client.request(
       {
         Action: 'TextTranslate',
         Version: '2018-03-21',
         SourceText: sourceText,
         Source: 'auto',
-        Target: 'zh',
+        Target: target,
         ProjectId: 0,
       },
       {
@@ -34,7 +38,7 @@ const secretKey = process.env.SKEY
       },
     )
 
-    res.send( `Your Translation Result : `+ sourceText + ` --- ` + resq.Response.TargetText)
+    res.send( `Your Translation Result : `+ sourceText + ` ---> ` + resq.Response.TargetText)
   })
 
   app.listen(8080)
