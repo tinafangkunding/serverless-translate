@@ -1,21 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serverless Component - Express.js</title>
-    <style lang="css">
-      h1 {
-        text-align: center;
-        width: 600px;
-        margin: 300px auto;
-      }
-    </style>
+    <script src="https://kit.fontawesome.com/5da60e4af9.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>
-      Welcome to the Express.js application created by
-      <a href="https://serverless.com/">Serverless Framework.</a>
-    </h1>
+    <form action="/process" method="POST" class="basic-grey">
+      <h1>Serverless Translator
+      <span>Deploy your own Translator  <a href="https://github.com/tinafangkunding/serverless-translate"><i class="fab fa-github-square"></i></a></span>
+      </h1>
+      <label>
+        <span>Target Language :</span>
+        <select name="target">
+            <option value="zh">中文(Chinese)</option>
+            <option value="en">英语(English)</option>
+            <option value="ja">日语(Japanese)</option>
+            <option value="ko">韩语(Korean)</option>
+            <option value="fr">法语(French)</option>
+            <option value="es">西班牙语(Spanish)</option>
+            <option value="it">意大利语(Italian)</option>
+            <option value="de">德语(German)</option>
+            <option value="ru">俄语(Russian)</option>
+            <option value="pt">葡萄牙语(Portuguese)</option>            
+        </select>
+    </label>
+      <label>
+          <span>Text :</span>
+          <textarea id="message" name="words" placeholder="Your Words">hello world</textarea>
+      </label>
+      <label>
+          <span>&nbsp;</span>
+          <input type="submit" class="button" value="Translate" />
+      </label>
+    </form>
+    <style type="text/css"> 
+        .basic-grey {
+        margin-left:auto;
+        margin-right:auto;
+        max-width: 500px;
+        background: #F7F7F7;
+        padding: 25px 15px 25px 10px;
+        font: 12px Georgia, "Times New Roman", Times, serif;
+        color: #888;
+        text-shadow: 1px 1px 1px #FFF;
+        border:1px solid #E4E4E4;
+      }
+      .basic-grey h1 {
+        font-size: 25px;
+        padding: 0px 0px 10px 40px;
+        display: block;
+        border-bottom:1px solid #E4E4E4;
+        margin: -10px -15px 30px -10px;;
+        color: #888;
+      }
+      .basic-grey h1>span {
+        display: block;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+      .basic-grey label {
+        display: block;
+        margin: 0px;
+      }
+      .basic-grey label>span {
+        float: left;
+        width: 20%;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 10px;
+        color: #888;
+      }
+      .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+        border: 1px solid #DADADA;
+        color: #888;
+        height: 30px;
+        margin-bottom: 16px;
+        margin-right: 6px;
+        margin-top: 2px;
+        outline: 0 none;
+        padding: 3px 3px 3px 5px;
+        width: 70%;
+        font-size: 12px;
+        line-height:15px;
+        box-shadow: inset 0px 1px 4px #ECECEC;
+        -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+        -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+      }
+      .basic-grey textarea{
+        padding: 5px 3px 3px 5px;
+      }
+      .basic-grey select {
+        background: #FFF url('down-arrow.png') no-repeat right;
+        background: #FFF url('down-arrow.png') no-repeat right;
+        appearance:none;
+        -webkit-appearance:none;
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        width: 70%;
+        height: 35px;
+        line-height: 25px;
+      }
+      .basic-grey textarea{
+        height:100px;
+      }
+      .basic-grey .button {
+        background: #E27575;
+        border: none;
+        padding: 10px 25px 10px 25px;
+        color: #FFF;
+        box-shadow: 1px 1px 5px #B6B6B6;
+        border-radius: 3px;
+        text-shadow: 1px 1px 1px #9E3F3F;
+        cursor: pointer;
+      }
+      .basic-grey .button:hover {
+        background: #CF7A7A
+      }
+    </style>  
   </body>
-</html>
+</html>  

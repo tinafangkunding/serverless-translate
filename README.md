@@ -1,6 +1,11 @@
 # Serverless 文本翻译工具 
 
-通过 Serverless Framework 的 [Express Component](https://github.com/serverless-components/tencent-express/tree/v2) 实现的文本翻译工具。基于腾讯云 TMT 机器翻译工具，支持多种语言的互相翻译。
+通过 Serverless Framework 的 [Express Component](https://github.com/serverless-components/tencent-express/tree/v2) 实现的文本翻译工具。基于腾讯云 TMT 机器翻译工具，支持多种语言的互相翻译。[点此查看 Demo 部署效果](https://service-q8qqunpf-1251971143.bj.apigw.tencentcs.com/release/)。 
+
+<p align="center">
+  <span>简体中文</span> |
+  <a href="./README.en.md">English</a>
+</p>
 
 特性：
 
@@ -43,14 +48,14 @@ $ npm install -g serverless
 $ mkdir express-trans && cd express-trans
 ```
 
-通过如下命令和模板链接，快速创建一个 express 应用：
+通过如下命令和模板链接，快速创建该应用：
 
 ```
 $ serverless create --template-url https://github.com/tinafangkunding/serverless-translate
 $ cd serverless-translate
 ```
 
-执行如下命令，安装 express 应用的对应依赖
+进入 `src` 目录，执行如下命令，安装对应依赖
 
 ```
 $ cd src && npm install
@@ -97,9 +102,9 @@ scf:
 10s › TranslateDemo › Success
 ```
 
-部署完毕后，你可以在命令行的输出中查看到该应用的 URL 地址，在地址后缀增加希望翻译的语言类型和查询的英文单词，访问地址即可查看翻译结果。支持的翻译语言类型参考[接口文档](https://cloud.tencent.com/document/api/551/15619)。
+部署完毕后，你可以在命令行的输出中查看到该应用的 URL 地址，访问地址即可查看部署结果。支持的翻译语言类型参考[接口文档](https://cloud.tencent.com/document/api/551/15619)。
 
-> 例如： https://service-q8qqunpf-1251971143.bj.apigw.tencentcs.com/release/zh/serverless  将 `serverless` 单词翻译为 `zh` 简体中文：
+> 例如： https://service-q8qqunpf-1251971143.bj.apigw.tencentcs.com/release/  输入 `serverless` 并且将其翻译为 `zh` 简体中文，输入语言是自动监测的。
 > 翻译结果：无服务器
 
 ### 5. 监控
